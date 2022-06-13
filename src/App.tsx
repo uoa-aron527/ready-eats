@@ -1,8 +1,10 @@
 import React from 'react';
 
-function App() {
+interface AppProps{}
+
+const App: React.FC<AppProps> = () => { 
   return (
-    <div className="App">
+    <div>
       Ready Eats is developing
     </div>
   );
