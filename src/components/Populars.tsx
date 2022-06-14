@@ -5,7 +5,7 @@ interface PopularsProps{}
 const Populars: React.FC<PopularsProps> = () => {
   return (
     <div>Populars</div>
-  )
+  );
 }
 
-export default Populars
+export default Populars;
