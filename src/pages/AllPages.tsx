@@ -9,7 +9,7 @@ const AllPages: React.FC<AllPagesProps> = () => {
     <div>
         <Homepage />
     </div>
-  )
+  );
 }
 
-export default AllPages
+export default AllPages;
