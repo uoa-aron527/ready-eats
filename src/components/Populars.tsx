@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import styled from 'styled-components'
 
 interface PopularsProps{}
 
@@ -34,6 +35,16 @@ const Populars: React.FC<PopularsProps> = () => {
       })}
     </div>
   );
+
 }
+
+const Wrapper = styled.div`
+  margin: 4rem 0rem;
+`;
+
+const Card = styled.div`
+  border-radius: 4rem;
+  min-height: 30rem;
+`
 
 export default Populars;
