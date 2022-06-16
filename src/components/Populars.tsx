@@ -25,7 +25,7 @@ const Populars: React.FC<PopularsProps> = () => {
     <div>
       {popularRecipes.map((recipe: any) => {
         return(
-          <div>
+          <div key={recipe.id}>
             <h5>
               {recipe.title}
             </h5>
