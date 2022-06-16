@@ -22,7 +22,17 @@ const Populars: React.FC<PopularsProps> = () => {
 
 
   return (
-    <div>Populars</div>
+    <div>
+      {popularRecipes.map((recipe: any) => {
+        return(
+          <div>
+            <h5>
+              {recipe.title}
+            </h5>
+          </div>
+        );
+      })}
+    </div>
   );
 }
 
