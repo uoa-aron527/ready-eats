@@ -26,11 +26,18 @@ const Populars: React.FC<PopularsProps> = () => {
     <div>
       {popularRecipes.map((recipe: any) => {
         return(
-          <div key={recipe.id}>
-            <h5>
-              {recipe.title}
-            </h5>
-          </div>
+          <Wrapper>
+            <h2>
+              Popular Recipes Now!
+            </h2>
+            {popularRecipes.map((recipe: any) => {
+              return(
+                <Card>
+                  {recipe.title}
+                </Card>
+              )
+            })}
+          </Wrapper>
         );
       })}
     </div>
