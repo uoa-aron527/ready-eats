@@ -34,6 +34,7 @@ const Populars: React.FC<PopularsProps> = () => {
               return(
                 <Card>
                   {recipe.title}
+                  <img src={recipe.image} alt={recipe.title} />
                 </Card>
               )
             })}
