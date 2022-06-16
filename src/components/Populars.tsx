@@ -33,7 +33,7 @@ const Populars: React.FC<PopularsProps> = () => {
             {popularRecipes.map((recipe: any) => {
               return(
                 <Card>
-                  {recipe.title}
+                  <p>{recipe.title}</p>
                   <img src={recipe.image} alt={recipe.title} />
                 </Card>
               )
