@@ -13,12 +13,26 @@ const Populars: React.FC<PopularsProps> = () => {
   }, []);
 
   const getPopularRecipes = async () => {
-    const response = await fetch(
-      `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_KEY}&number=9`
-    );
-    const data = await response.json();
-    console.log(data);
-    setPopularRecipes(data.recipes);
+    // This is to check whether local storage on the browser already has stored the popular recipes 
+    const isRecipePresent = localStorage.getItem("recipes");
+
+    if (isRecipePresent) {
+      setPopularRecipes(JSON.parse(isRecipePresent));
+    } 
+    
+    // If not, the endpoint is fetched and payload stored onto local storage to adhere to endpoint usage limits
+    else {
+      
+      const response = await fetch(
+        `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_KEY}&number=9`
+      );
+      const data = await response.json();
+
+      localStorage.setItem('recipes', JSON.stringify(data.recipes));
+
+      console.log(data);
+      setPopularRecipes(data.recipes);
+    }
   };
 
   return (
@@ -36,7 +50,7 @@ const Populars: React.FC<PopularsProps> = () => {
         >
           {popularRecipes.map((recipe: any) => {
             return (
-              <SplideSlide>
+              <SplideSlide key={recipe.id}>
                 <Card>
                   <p>{recipe.title}</p>
                   <img src={recipe.image} alt={recipe.title} />
@@ -78,7 +92,7 @@ const Card = styled.div`
     transform: translate(-50%, 0%);
     color: white;
     width: 100%;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1rem;
     height: 40%;
     text-align: center;
@@ -89,11 +103,11 @@ const Card = styled.div`
 `;
 
 const ImageGradient = styled.div`
-  z-index: 10;
+  z-index: 3;
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0, 0.1));
-`
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+`;
 
 export default Populars;
