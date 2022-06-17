@@ -9,12 +9,12 @@ const TopVeg: React.FC<TopVegProps> = () => {
   const [vegRecipes, setVegRecipes] = useState([]);
 
   useEffect(() => {
-    getPopularRecipes();
+    getVeggieRecipes();
   }, []);
 
-  const getPopularRecipes = async () => {
+  const getVeggieRecipes = async () => {
     // This is to check whether local storage on the browser already has stored the popular recipes 
-    const isRecipePresent = localStorage.getItem("recipes");
+    const isRecipePresent = localStorage.getItem('vegRecipes');
 
     if (isRecipePresent) {
       setVegRecipes(JSON.parse(isRecipePresent));
@@ -28,7 +28,7 @@ const TopVeg: React.FC<TopVegProps> = () => {
       );
       const data = await response.json();
 
-      localStorage.setItem('recipes', JSON.stringify(data.recipes));
+      localStorage.setItem('vegRecipes', JSON.stringify(data.recipes));
 
       console.log(data);
       setVegRecipes(data.recipes);
@@ -38,7 +38,7 @@ const TopVeg: React.FC<TopVegProps> = () => {
   return (
     <div>
       <Wrapper>
-        <h2>Popular Recipes Now!</h2>
+        <h2>Top Veggie Recipes</h2>
         <Splide
           options={{
             perPage: 3,

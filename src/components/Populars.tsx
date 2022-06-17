@@ -41,7 +41,7 @@ const Populars: React.FC<PopularsProps> = () => {
         <h2>Popular Recipes Now!</h2>
         <Splide
           options={{
-            perPage: 3,
+            perPage: 4,
             arrows: false,
             pagination: false,
             drag: "free",
