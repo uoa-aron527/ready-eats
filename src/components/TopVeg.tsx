@@ -24,7 +24,7 @@ const TopVeg: React.FC<TopVegProps> = () => {
     else {
       
       const response = await fetch(
-        `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_KEY}&number=9`
+        `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_KEY}&number=9&tags=vegetarian`
       );
       const data = await response.json();
 
