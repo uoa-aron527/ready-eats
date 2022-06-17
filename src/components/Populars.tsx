@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { Splide, SplideSlide } from '@splidejs/react-splide'
+import '@splidejs/splide/dist/css/splide.min.css'
 
 interface PopularsProps{}
 
@@ -51,8 +53,13 @@ const Wrapper = styled.div`
 `;
 
 const Card = styled.div`
-  border-radius: 4rem;
+  border-radius: 2rem;
   min-height: 30rem;
+  overflow: hidden;
+
+  img{
+    border-radius: 2rem;
+  }
 `
 
 export default Populars;
