@@ -25,7 +25,15 @@ const Populars: React.FC<PopularsProps> = () => {
     <div>
       <Wrapper>
         <h2>Popular Recipes Now!</h2>
-        <Splide>
+        <Splide
+          options={{
+            perPage: 3,
+            arrows: false,
+            pagination: false,
+            drag: "free",
+            gap: "5rem",
+          }}
+        >
           {popularRecipes.map((recipe: any) => {
             return (
               <SplideSlide>
