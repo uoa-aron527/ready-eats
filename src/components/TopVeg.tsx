@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from "styled-components";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
+import { Wrapper } from "./Wrapper";
 
 interface TopVegProps{}
 
@@ -64,10 +65,6 @@ const TopVeg: React.FC<TopVegProps> = () => {
     </div>
   );
 };
-
-const Wrapper = styled.div`
-  margin: 4rem 0rem;
-`;
 
 const Card = styled.div`
   border-radius: 2rem;
