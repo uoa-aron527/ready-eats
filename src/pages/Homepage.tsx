@@ -1,6 +1,7 @@
 import React from 'react'
 import Populars from '../components/Populars'
-import TopNonVeg from '../components/TopNonVeg'
+import TopDessert from '../components/TopDessert'
+import TopNonVeg from '../components/TopDessert'
 import TopVeg from '../components/TopVeg'
 
 interface HomepageProps{}
@@ -10,7 +11,7 @@ const Homepage: React.FC<HomepageProps> = () => {
     <div>
       <Populars />
       <TopVeg />
-      <TopNonVeg />
+      <TopDessert />
     </div>
   )
 }

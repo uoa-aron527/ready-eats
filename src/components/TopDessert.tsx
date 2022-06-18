@@ -3,21 +3,21 @@ import styled from "styled-components";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 
-interface TopNonVegProps{}
+interface DessertProps{}
 
-const TopNonVeg: React.FC<TopNonVegProps> = () => {
-  const [nonVegRecipes, setNonVegRecipes] = useState([]);
+const TopDessert: React.FC<DessertProps> = () => {
+  const [dessertRecipes, setDessertRecipes] = useState([]);
 
   useEffect(() => {
-    getNonVeggieRecipes();
+    getDessertRecipes();
   }, []);
 
-  const getNonVeggieRecipes = async () => {
+  const getDessertRecipes = async () => {
     // This is to check whether local storage on the browser already has stored the popular recipes 
-    const isRecipePresent = localStorage.getItem('nonVegRecipes');
+    const isRecipePresent = localStorage.getItem('dessertRecipes');
 
     if (isRecipePresent) {
-      setNonVegRecipes(JSON.parse(isRecipePresent));
+      setDessertRecipes(JSON.parse(isRecipePresent));
     } 
     
     // If not, the endpoint is fetched and payload stored onto local storage to adhere to endpoint usage limits
@@ -28,17 +28,17 @@ const TopNonVeg: React.FC<TopNonVegProps> = () => {
       );
       const data = await response.json();
 
-      localStorage.setItem('nonVegRecipes', JSON.stringify(data.recipes));
+      localStorage.setItem('dessertRecipes', JSON.stringify(data.recipes));
 
       console.log(data);
-      setNonVegRecipes(data.recipes);
+      setDessertRecipes(data.recipes);
     }
   };
 
   return (
     <div>
       <Wrapper>
-        <h2>Top Non-Vegetarian Recipes</h2>
+        <h2>Top Desserts</h2>
         <Splide
           options={{
             perPage: 3,
@@ -48,7 +48,7 @@ const TopNonVeg: React.FC<TopNonVegProps> = () => {
             gap: "5rem",
           }}
         >
-          {nonVegRecipes.map((recipe: any) => {
+          {dessertRecipes.map((recipe: any) => {
             return (
               <SplideSlide key={recipe.id}>
                 <Card>
@@ -110,4 +110,4 @@ const ImageGradient = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
 `;
 
-export default TopNonVeg;
+export default TopDessert;
