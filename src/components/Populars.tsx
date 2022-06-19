@@ -48,7 +48,7 @@ const Populars: React.FC<PopularsProps> = () => {
             arrows: false,
             pagination: false,
             drag: "free",
-            gap: "5rem",
+            gap: "3.25rem",
           }}
         >
           {popularRecipes.map((recipe: any) => {
