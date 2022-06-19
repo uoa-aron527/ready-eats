@@ -1,12 +1,13 @@
 import React from 'react'
 import { FaPizzaSlice, FaHamburger } from 'react-icons/fa';
 import { GiCakeSlice, GiKebabSpit, GiNoodles } from 'react-icons/gi';
+import { List } from './List';
 
 interface CategoryProps {}
 
 const Category: React.FC<CategoryProps> = () => {
   return (
-    <div>
+    <List>
       <div>
         <FaPizzaSlice />
         <h3>Italian</h3>
@@ -27,7 +28,7 @@ const Category: React.FC<CategoryProps> = () => {
         <GiCakeSlice />
         <h3>Dessert</h3>
       </div>
-    </div>
+    </List>
   );
 }
 
