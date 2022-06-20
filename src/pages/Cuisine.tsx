@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link, useParams } from "react-router-dom";
+import { Grid } from "../components/Grid";
+import { CuisineCard } from "../components/CuisineCard";
 
 const Cuisine = () => {
   
@@ -20,7 +22,18 @@ const Cuisine = () => {
     setCuisineCategory(categoryRecipes.results);
   };
 
-  return <div>Cuisine</div>;
+  return( 
+    <Grid>
+      {cuisineCategory.map((recipe: any) => {
+        return(
+          <CuisineCard key={recipe.id}>
+            <img src={recipe.image} alt={recipe.title} />
+            <h3>{recipe.title}</h3>
+          </CuisineCard>
+        )
+      })}
+    </Grid>
+  );
 };
 
 export default Cuisine;
