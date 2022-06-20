@@ -10,7 +10,7 @@ const AllPages: React.FC<AllPagesProps> = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/cuisine" element={<Cuisine />} />
+        <Route path="/category" element={<Cuisine />} />
       </Routes>
     </BrowserRouter>
   );
