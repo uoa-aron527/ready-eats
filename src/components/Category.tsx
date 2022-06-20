@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaPizzaSlice, FaHamburger } from 'react-icons/fa';
-import { GiCakeSlice, GiKebabSpit, GiNoodles } from 'react-icons/gi';
+import { GiChiliPepper, GiKebabSpit, GiNoodles, GiTacos } from 'react-icons/gi';
 import { List } from './List';
 import { NavLink } from 'react-router-dom'
 
@@ -13,21 +13,25 @@ const Category: React.FC<CategoryProps> = () => {
         <FaPizzaSlice />
         <h3>Italian</h3>
       </NavLink>
-      <NavLink to={"/category/fastfood"}>
+      <NavLink to={"/category/american"}>
         <FaHamburger />
-        <h3>Fast Food</h3>
+        <h3>American</h3>
       </NavLink>
-      <NavLink to={"/category/asian"}>
+      <NavLink to={"/category/thai"}>
         <GiNoodles />
-        <h3>Asian</h3>
+        <h3>Thai</h3>
       </NavLink>
-      <NavLink to={"/category/kebabs"}>
+      <NavLink to={"/category/middleeastern"}>
         <GiKebabSpit />
-        <h3>Kebabs</h3>
+        <h3>Middle Eastern</h3>
       </NavLink>
-      <NavLink to={"/category/dessert"}>
-        <GiCakeSlice />
-        <h3>Dessert</h3>
+      <NavLink to={"/category/mexican"}>
+        <GiTacos />
+        <h3>Mexican</h3>
+      </NavLink>
+      <NavLink to={"/category/indian"}>
+        <GiChiliPepper />
+        <h3>Indian</h3>
       </NavLink>
     </List>
   );
