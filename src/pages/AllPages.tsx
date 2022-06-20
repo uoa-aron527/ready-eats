@@ -1,6 +1,7 @@
 import React from "react";
 import Homepage from "./Homepage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Cuisine from "./Cuisine";
 
 interface AllPagesProps {}
 
@@ -9,6 +10,7 @@ const AllPages: React.FC<AllPagesProps> = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Homepage />} />
+        <Route path="/cuisine" element={<Cuisine />} />
       </Routes>
     </BrowserRouter>
   );
