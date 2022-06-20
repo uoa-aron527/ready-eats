@@ -8,11 +8,10 @@ const Cuisine = () => {
   const params = useParams();
 
   useEffect(() => {
-    // getCuisineCategory()
-    console.log(params.type)
+    getCuisineCategory(params.type);
   },[params.type])
 
-  const getCuisineCategory = async (name: String) => {
+  const getCuisineCategory = async (name: any) => {
 
     const response = await fetch(
       `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_KEY}&number=9&cuisine=${name}`
