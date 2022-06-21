@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { SearchForm } from "./SearchForm";
 import { ImSearch } from "react-icons/im";
+import { useNavigate} from 'react-router-dom'
 
 const Search = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const navigateTo = useNavigate();
 
   const submitEventHandler = (e: any) => {
     e.preventDefault();
+    navigateTo('/search/' + searchQuery);
   }
 
   return (
