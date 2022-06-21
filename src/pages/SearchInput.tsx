@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
+import { CuisineCard } from '../components/CuisineCard';
+import { Grid } from '../components/Grid';
 
 const SearchInput = () => {
   const [searchResults, setSearchResults] = useState([]);
@@ -21,7 +23,16 @@ const SearchInput = () => {
 
 
   return (
-    <div>Search</div>
+    <Grid>
+      {searchResults.map((recipe: any) => {
+        return(
+          <CuisineCard key={recipe.id}>
+            <img src={recipe.image} alt={recipe.title} />
+            <h3>{recipe.title}</h3>
+          </CuisineCard>
+        )
+      })}
+    </Grid>
   )
 }
 
