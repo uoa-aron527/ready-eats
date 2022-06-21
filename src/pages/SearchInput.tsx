@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom';
 
 const SearchInput = () => {
   const [searchResults, setSearchResults] = useState([]);
+  const params = useParams();
 
   useEffect(() => {
-    getSearchResults();
-  },[])
+    getSearchResults(params.query);
+  },[params.query])
 
   const getSearchResults = async (name: any) => {
 
