@@ -1,5 +1,6 @@
 import React from "react";
 import Homepage from "./Homepage";
+import SearchInput from "./SearchInput";
 import { Route, Routes } from "react-router-dom";
 import Cuisine from "./Cuisine";
 
@@ -10,6 +11,7 @@ const AllPages: React.FC<AllPagesProps> = () => {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/category/:type" element={<Cuisine />} />
+        <Route path="/search/:query" element={<SearchInput />} />
       </Routes>
   );
 };

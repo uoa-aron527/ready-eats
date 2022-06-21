@@ -5,8 +5,12 @@ import { ImSearch } from "react-icons/im";
 const Search = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
+  const submitEventHandler = (e: any) => {
+    e.preventDefault();
+  }
+
   return (
-    <SearchForm>
+    <SearchForm onSubmit={submitEventHandler}>
       <div>
         <ImSearch />
         <input
