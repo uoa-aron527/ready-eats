@@ -22,7 +22,7 @@ export const SearchForm = styled.form`
     svg{
         position: absolute;
         top: 50%;
-        left: 0%;
+        left: 1.5%;
         color: white;
         transform: translate(100%, -50%);
     }
