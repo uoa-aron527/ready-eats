@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { Grid } from "../components/Grid";
 import { CuisineCard } from "../components/CuisineCard";
 
+
 const Cuisine = () => {
   
   const [cuisineCategory, setCuisineCategory] = useState([]);
@@ -27,8 +28,10 @@ const Cuisine = () => {
       {cuisineCategory.map((recipe: any) => {
         return(
           <CuisineCard key={recipe.id}>
+            <Link to={'/recipe/' + recipe.id}>
             <img src={recipe.image} alt={recipe.title} />
             <h3>{recipe.title}</h3>
+            </Link>
           </CuisineCard>
         )
       })}
