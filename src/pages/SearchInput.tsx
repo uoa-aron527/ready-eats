@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { CuisineCard } from '../components/CuisineCard';
 import { Grid } from '../components/Grid';
 
@@ -14,7 +14,7 @@ const SearchInput = () => {
   const getSearchResults = async (name: any) => {
 
     const response = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_KEY}&number=9&query=${name}`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_DETAILS_KEY}&number=9&query=${name}`
     );
     const searchRecipes = await response.json();
     setSearchResults(searchRecipes.results);
@@ -27,8 +27,10 @@ const SearchInput = () => {
       {searchResults.map((recipe: any) => {
         return(
           <CuisineCard key={recipe.id}>
+            <Link to={'/recipe/' + recipe.id}>
             <img src={recipe.image} alt={recipe.title} />
             <h3>{recipe.title}</h3>
+            </Link>
           </CuisineCard>
         )
       })}
