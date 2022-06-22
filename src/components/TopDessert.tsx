@@ -4,6 +4,7 @@ import "@splidejs/splide/dist/css/splide.min.css";
 import { Wrapper } from "./Wrapper";
 import { Card } from './Card';
 import { ImageGradient } from './ImageGradient';
+import { Link } from 'react-router-dom';
 
 interface DessertProps{}
 
@@ -54,9 +55,11 @@ const TopDessert: React.FC<DessertProps> = () => {
             return (
               <SplideSlide key={recipe.id}>
                 <Card>
+                  <Link to={'/recipe/' + recipe.id}>
                   <p>{recipe.title}</p>
                   <img src={recipe.image} alt={recipe.title} />
                   <ImageGradient />
+                  </Link>
                 </Card>
               </SplideSlide>
             );
