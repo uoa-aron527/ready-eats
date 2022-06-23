@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import { DetailButton } from '../components/DetailButton';
 import { DetailsWrapper } from '../components/DetailsWrapper';
+import { InfoTab } from '../components/InfoTab';
 
 const RecipeDetails = () => {
 
@@ -25,6 +27,10 @@ const RecipeDetails = () => {
         <h2>{recipeDetails.title}</h2>
         <img src={recipeDetails.image} alt={recipeDetails.id} />
       </div>
+      <InfoTab>
+        <DetailButton>Instructions</DetailButton>
+        <DetailButton>Ingredients</DetailButton>
+      </InfoTab>
     </DetailsWrapper>
   )
 }
