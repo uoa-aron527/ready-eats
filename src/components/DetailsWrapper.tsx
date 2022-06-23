@@ -5,7 +5,7 @@ export const DetailsWrapper = styled.div`
     margin-bottom: 7.5rem;
     display: flex;
     .active{
-        background: linear-gradient(75deg, #f47121, #b9455c);
+        background: linear-gradient(75deg, #313131, #464142);
         color: white;
     }
 
