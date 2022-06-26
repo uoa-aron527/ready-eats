@@ -39,6 +39,11 @@ const RecipeDetails = () => {
           <h2 dangerouslySetInnerHTML={{ __html: recipeDetails.summary}}></h2>
           <h2 dangerouslySetInnerHTML={{ __html: recipeDetails.instructions}}></h2>
         </div>
+        <ul>
+          {recipeDetails.extendedIngredients.map((ingredient: any) => (
+            <li key={ingredient.id}>{ingredient.original}</li>
+          ))}
+        </ul>
       </InfoTab>
     </DetailsWrapper>
   )
