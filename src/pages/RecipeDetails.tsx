@@ -36,8 +36,8 @@ const RecipeDetails = () => {
           Ingredients
         </DetailButton>
         <div>
-          <h2>{recipeDetails.summary}</h2>
-          <h2>{recipeDetails.instructions}</h2>
+          <h2 dangerouslySetInnerHTML={{ __html: recipeDetails.summary}}></h2>
+          <h2 dangerouslySetInnerHTML={{ __html: recipeDetails.instructions}}></h2>
         </div>
       </InfoTab>
     </DetailsWrapper>
