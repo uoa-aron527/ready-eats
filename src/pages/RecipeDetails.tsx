@@ -35,6 +35,10 @@ const RecipeDetails = () => {
         <DetailButton className={activeTab === 'Ingredients' ? 'active' : ''} onClick={() => setActiveTab('Ingredients')}>
           Ingredients
         </DetailButton>
+        <div>
+          <h2>{recipeDetails.summary}</h2>
+          <h2>{recipeDetails.instructions}</h2>
+        </div>
       </InfoTab>
     </DetailsWrapper>
   )
