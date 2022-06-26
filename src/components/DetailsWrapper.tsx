@@ -11,10 +11,12 @@ export const DetailsWrapper = styled.div`
 
     h2{
         margin-bottom: 3rem;
+        font-size: 1.5rem;
+        font-weight: 300;
     }
 
     li{
-        font-size: 1.5rem;
+        font-size: 1.1rem;
         line-height: 2rem;
     }
 
