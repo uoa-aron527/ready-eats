@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Logo = styled(Link)`
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-weight: 500;
-    font-style: 'Lobster Two', cursive;
+    font-family: 'Lobster Two', cursive;
 `
