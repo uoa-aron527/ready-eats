@@ -32,7 +32,12 @@ const Cuisine = () => {
     >
       {cuisineCategory.map((recipe: any) => {
         return(
-          <CuisineCard key={recipe.id}>
+          <CuisineCard key={recipe.id}
+            animate = {{ opacity: 1 }}
+            initial = {{ opacity: 0 }}
+            exit = {{ opacity: 0 }}
+            transition = {{ duration: 0.75 }}
+          >
             <Link to={'/recipe/' + recipe.id}>
             <img src={recipe.image} alt={recipe.title} />
             <h3>{recipe.title}</h3>

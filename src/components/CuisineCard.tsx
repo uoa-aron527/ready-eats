@@ -1,8 +1,9 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 
 // This is different to Card used in the carousel components as it is related to the top cuisines. Lesser styling required
-export const CuisineCard = styled.div`
+export const CuisineCard = styled(motion.div)`
   a {
     text-decoration: none;
   }

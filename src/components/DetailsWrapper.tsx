@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-export const DetailsWrapper = styled.div`
+export const DetailsWrapper = styled(motion.div)`
     margin-top: 10.5rem;
     margin-bottom: 7.5rem;
     display: flex;

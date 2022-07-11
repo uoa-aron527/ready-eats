@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const Card = styled.div`
+export const Card = styled(motion.div)`
 border-radius: 2rem;
 min-height: 30rem;
 overflow: hidden;
