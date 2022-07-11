@@ -1,18 +1,18 @@
 import React from 'react'
 import Populars from '../components/Populars'
 import TopDessert from '../components/TopDessert'
-import TopNonVeg from '../components/TopDessert'
 import TopVeg from '../components/TopVeg'
+import { motion } from 'framer-motion';
 
 interface HomepageProps{}
 
 const Homepage: React.FC<HomepageProps> = () => {
   return (
-    <div>
+    <motion.div>
       <Populars />
       <TopVeg />
       <TopDessert />
-    </div>
+    </motion.div>
   )
 }
 

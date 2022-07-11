@@ -16,7 +16,7 @@ const App: React.FC<AppProps> = () => {
         <Navbar>
           <Logo to={'/'}>
             Ready
-            <GiKnifeFork/>
+            <GiKnifeFork />
             Eats
           </Logo>
         </Navbar>
